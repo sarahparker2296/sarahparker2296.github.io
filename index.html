@@ -285,15 +285,25 @@
 								<p>
 								July 10, 2021
 								</p>
-								<form action="/html/tags/html_form_tag_action.cfm" method="post">
-								<div>
-								<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
-								Comment here!
-								</textarea>
-								</div>
-								<input type="submit" value="Submit">
-								</form>
-						
+							
+								<!-- comment box starts here -->
+								<section id="app">
+								    <div class="container">
+								      <div class="row">
+									<div class="col-6">
+									  <div class="comment">
+									<p v-for="items in item" v-text="items"></p>
+									  </div><!--End Comment-->
+									  </div><!--End col -->
+									  </div><!-- End row -->
+								      <div class="row">
+									<div class="col-6">
+								      <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem" @keyup.enter="addItem()"></textarea>
+									  <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
+									</div><!-- End col -->
+								      </div><!--End Row -->
+								    </div><!--End Container -->
+								  </section><!-- end App -->
 								
 						</article>
 						<article id="blog">
